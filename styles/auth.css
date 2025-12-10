@@ -1,0 +1,205 @@
+/* ============================================
+   AUTHENTICATION PAGES STYLING
+   ============================================ */
+
+body {
+    overflow-x: hidden;
+}
+
+.auth-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+/* Left Side - Branding */
+.auth-left {
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-charcoal) 100%);
+    color: var(--color-cream);
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-left::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.auth-left::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(168, 181, 161, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.auth-branding {
+    position: relative;
+    z-index: 1;
+}
+
+.auth-logo {
+    font-family: var(--font-display);
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-cream);
+    margin-bottom: var(--space-2);
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.auth-tagline {
+    font-size: var(--font-size-lg);
+    color: var(--color-light-gray);
+    font-weight: var(--font-weight-light);
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.auth-info {
+    position: relative;
+    z-index: 1;
+}
+
+.auth-info h2 {
+    font-size: var(--font-size-3xl);
+    color: var(--color-cream);
+    margin-bottom: var(--space-2);
+}
+
+.auth-info .text-muted {
+    color: var(--color-light-gray);
+}
+
+/* Right Side - Form */
+.auth-right {
+    background-color: var(--color-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-6);
+}
+
+.auth-form-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.auth-title {
+    font-size: var(--font-size-3xl);
+    color: var(--color-navy);
+    margin-bottom: var(--space-2);
+    text-align: center;
+}
+
+.auth-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-bottom: var(--space-6);
+}
+
+.auth-form {
+    width: 100%;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.auth-divider {
+    position: relative;
+    text-align: center;
+    margin: var(--space-4) 0;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-border);
+}
+
+.auth-divider span {
+    position: relative;
+    background-color: var(--color-cream);
+    padding: 0 var(--space-2);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.demo-accounts {
+    margin-top: var(--space-4);
+}
+
+.demo-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.demo-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.auth-footer {
+    text-align: center;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .auth-container {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-left {
+        min-height: 40vh;
+        padding: var(--space-6);
+    }
+
+    .auth-info {
+        display: none;
+    }
+
+    .auth-right {
+        padding: var(--space-4);
+    }
+}
+
+@media (max-width: 640px) {
+    .auth-left {
+        min-height: 30vh;
+        padding: var(--space-4);
+    }
+
+    .auth-logo {
+        font-size: var(--font-size-2xl);
+    }
+
+    .auth-tagline {
+        font-size: var(--font-size-base);
+    }
+
+    .auth-title {
+        font-size: var(--font-size-2xl);
+    }
+}

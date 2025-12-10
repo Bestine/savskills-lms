@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Dashboard - SavSkills</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/design-system.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/alumni.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-logo">SAVSKILLS</h2>
+                <span class="badge badge-premium">Alumni Premium</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#overview" class="sidebar-link active">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" />
+                        <rect x="14" y="3" width="7" height="7" />
+                        <rect x="14" y="14" width="7" height="7" />
+                        <rect x="3" y="14" width="7" height="7" />
+                    </svg>
+                    Overview
+                </a>
+
+                <a href="#library" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                    </svg>
+                    Library
+                </a>
+
+                <a href="#mentorship" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                    Mentorship
+                </a>
+
+                <a href="#directory" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    </svg>
+                    Directory
+                </a>
+
+                <a href="#referrals" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="8.5" cy="7" r="4" />
+                        <polyline points="17 11 19 13 23 9" />
+                    </svg>
+                    Referrals
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar" style="background: linear-gradient(135deg, #C87855 0%, #E8A48A 100%);">AO
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name">Aisha</div>
+                        <div class="user-role">Alumni</div>
+                    </div>
+                </div>
+                <button class="btn btn-ghost btn-sm" onclick="window.savskills.logout()">Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div>
+                    <h1>Welcome Back, Aisha</h1>
+                    <p class="text-secondary">Marketing Director • Lagos, Nigeria</p>
+                </div>
+            </header>
+
+            <!-- Stats Overview -->
+            <section id="overview" class="dashboard-section">
+                <div class="dashboard-grid">
+                    <div class="stat-card card-premium">
+                        <span class="stat-value">6</span>
+                        <span class="stat-label">Months Since Graduation</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">Students Mentored</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-value">12</span>
+                        <span class="stat-label">Directory Connections</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-value">2</span>
+                        <span class="stat-label">Successful Referrals</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Premium Library -->
+            <section id="library" class="dashboard-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Premium Library</h3>
+                        <p class="card-subtitle">Exclusive masterclasses and advanced modules</p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="library-search mb-4">
+                            <input type="search" class="form-input" placeholder="Search library by topic..."
+                                id="librarySearch">
+                        </div>
+
+                        <div class="library-grid">
+                            <div class="library-item premium">
+                                <div class="library-thumbnail">
+                                    <span class="badge badge-premium">New</span>
+                                </div>
+                                <div class="library-content">
+                                    <h5>Crisis Management in 2025</h5>
+                                    <p class="text-muted">Dr. Amina Khalil • 45 min</p>
+                                    <p class="library-description">Navigate brand reputation challenges with proven
+                                        frameworks</p>
+                                    <button class="btn btn-primary btn-sm mt-2">Watch Now</button>
+                                </div>
+                            </div>
+
+                            <div class="library-item">
+                                <div class="library-thumbnail"></div>
+                                <div class="library-content">
+                                    <h5>Advanced Financial Modeling</h5>
+                                    <p class="text-muted">Prof. Kwame Asante • 60 min</p>
+                                    <p class="library-description">Strategic planning tools for startup leaders</p>
+                                    <button class="btn btn-outline btn-sm mt-2">Watch Now</button>
+                                </div>
+                            </div>
+
+                            <div class="library-item">
+                                <div class="library-thumbnail"></div>
+                                <div class="library-content">
+                                    <h5>Building High-Performance Teams</h5>
+                                    <p class="text-muted">Sarah Okafor • 38 min</p>
+                                    <p class="library-description">Hiring, culture, and scaling in Africa</p>
+                                    <button class="btn btn-outline btn-sm mt-2">Watch Now</button>
+                                </div>
+                            </div>
+
+                            <div class="library-item">
+                                <div class="library-thumbnail"></div>
+                                <div class="library-content">
+                                    <h5>Cross-Border Partnerships</h5>
+                                    <p class="text-muted">Malik Diop • 52 min</p>
+                                    <p class="library-description">Navigating regulatory and cultural differences</p>
+                                    <button class="btn btn-outline btn-sm mt-2">Watch Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Smart Mentor Match -->
+            <section id="mentorship" class="dashboard-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Smart Mentor Match</h3>
+                        <p class="card-subtitle">Connect with students who need your expertise</p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="mentor-matches">
+                            <div class="mentor-match-item">
+                                <div class="match-header">
+                                    <div class="match-student">
+                                        <div class="match-avatar">JO</div>
+                                        <div>
+                                            <strong>Janan Odhiambo</strong>
+                                            <p class="text-muted">Logistics Manager • Mombasa, Kenya</p>
+                                        </div>
+                                    </div>
+                                    <span class="badge badge-premium">95% Match</span>
+                                </div>
+                                <p class="match-reason">Based on your marketing expertise, Janan could benefit from your
+                                    experience with cross-functional influence and stakeholder communication.</p>
+                                <div class="match-actions">
+                                    <button class="btn btn-primary btn-sm">Accept (15 min call)</button>
+                                    <button class="btn btn-ghost btn-sm">Pass</button>
+                                </div>
+                            </div>
+
+                            <div class="mentor-match-item">
+                                <div class="match-header">
+                                    <div class="match-student">
+                                        <div class="match-avatar"
+                                            style="background: linear-gradient(135deg, #A8B5A1 0%, #C8D4C1 100%);">KA
+                                        </div>
+                                        <div>
+                                            <strong>Kwame Asante</strong>
+                                            <p class="text-muted">Tech Founder • Accra, Ghana</p>
+                                        </div>
+                                    </div>
+                                    <span class="badge badge-success">82% Match</span>
+                                </div>
+                                <p class="match-reason">Kwame is building a fintech startup and needs guidance on brand
+                                    positioning in competitive markets.</p>
+                                <div class="match-actions">
+                                    <button class="btn btn-primary btn-sm">Accept (15 min call)</button>
+                                    <button class="btn btn-ghost btn-sm">Pass</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Network Directory -->
+            <section id="directory" class="dashboard-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">SavSkills Directory</h3>
+                        <p class="card-subtitle">Connect with trusted leaders across Africa</p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="directory-filters mb-4">
+                            <input type="search" class="form-input" placeholder="Search by name, role, or location..."
+                                style="grid-column: 1 / -1;">
+                            <select class="form-select">
+                                <option>All Industries</option>
+                                <option>Finance</option>
+                                <option>Technology</option>
+                                <option>Logistics</option>
+                                <option>Healthcare</option>
+                            </select>
+                            <select class="form-select">
+                                <option>All Locations</option>
+                                <option>Nigeria</option>
+                                <option>Kenya</option>
+                                <option>Ghana</option>
+                                <option>South Africa</option>
+                            </select>
+                        </div>
+
+                        <div class="directory-grid">
+                            <div class="directory-card">
+                                <div class="directory-avatar">MO</div>
+                                <h5>Malik Osei</h5>
+                                <p class="directory-role">Supply Chain Director</p>
+                                <p class="directory-location">Nairobi, Kenya</p>
+                                <div class="directory-tags">
+                                    <span class="badge">Logistics</span>
+                                    <span class="badge">Operations</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm mt-3">Connect</button>
+                            </div>
+
+                            <div class="directory-card">
+                                <div class="directory-avatar"
+                                    style="background: linear-gradient(135deg, #A8B5A1 0%, #C8D4C1 100%);">ZM</div>
+                                <h5>Zara Mwangi</h5>
+                                <p class="directory-role">Sustainability Lead</p>
+                                <p class="directory-location">Kampala, Uganda</p>
+                                <div class="directory-tags">
+                                    <span class="badge">Green Tech</span>
+                                    <span class="badge">Social Impact</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm mt-3">Connect</button>
+                            </div>
+
+                            <div class="directory-card">
+                                <div class="directory-avatar"
+                                    style="background: linear-gradient(135deg, #C87855 0%, #E8A48A 100%);">FA</div>
+                                <h5>Fatima Adeyemi</h5>
+                                <p class="directory-role">Product Manager</p>
+                                <p class="directory-location">Accra, Ghana</p>
+                                <div class="directory-tags">
+                                    <span class="badge">Fintech</span>
+                                    <span class="badge">Product</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm mt-3">Connect</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Referral System -->
+            <section id="referrals" class="dashboard-section">
+                <div class="card card-premium">
+                    <div class="card-header">
+                        <h3 class="card-title">Nominate a Leader</h3>
+                        <p class="card-subtitle">Refer talented colleagues and unlock rewards</p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="referral-benefits mb-4">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🎁</div>
+                                <div>
+                                    <strong>1 Referral</strong>
+                                    <p>Unlock exclusive CEO masterclass</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💎</div>
+                                <div>
+                                    <strong>3 Referrals</strong>
+                                    <p>30% discount on premium renewal</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">👑</div>
+                                <div>
+                                    <strong>5 Referrals</strong>
+                                    <p>VIP Alumni status + private dinner</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form id="referralForm" class="referral-form">
+                            <div class="form-group">
+                                <label class="form-label">Candidate Name</label>
+                                <input type="text" class="form-input" placeholder="Sam Adebayo" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-input" placeholder="sam@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Why are they a great fit?</label>
+                                <textarea class="form-textarea" rows="4"
+                                    placeholder="Sam is a brilliant junior colleague with huge potential. They're ready for the next level of leadership development..."
+                                    required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Send Nomination</button>
+                            </div>
+                        </form>
+
+                        <div class="referral-history mt-6">
+                            <h5 class="mb-3">Your Referrals (2)</h5>
+                            <div class="referral-item">
+                                <div class="referral-status success"></div>
+                                <div>
+                                    <strong>Michael Kwame</strong>
+                                    <p class="text-muted">Enrolled in Cohort 13 • Oct 2025</p>
+                                </div>
+                            </div>
+                            <div class="referral-item">
+                                <div class="referral-status success"></div>
+                                <div>
+                                    <strong>Linda Okonkwo</strong>
+                                    <p class="text-muted">Enrolled in Cohort 12 • Sep 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script>
+        // Protect page - require alumni authentication
+        window.savskills.requireAuth(['alumni']);
+
+        // Handle referral form
+        document.getElementById('referralForm')?.addEventListener('submit', function (e) {
+            e.preventDefault();
+            window.savskills.showNotification('Nomination sent successfully! 🎉', 'success');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

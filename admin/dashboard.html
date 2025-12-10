@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SavSkills</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/design-system.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/admin.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-logo">SAVSKILLS</h2>
+                <span class="badge badge-warning">Admin</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#overview" class="sidebar-link active">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" />
+                        <rect x="14" y="3" width="7" height="7" />
+                        <rect x="14" y="14" width="7" height="7" />
+                        <rect x="3" y="14" width="7" height="7" />
+                    </svg>
+                    Overview
+                </a>
+
+                <a href="#risk-radar" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                        <line x1="12" y1="9" x2="12" y2="13" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                    Risk Radar
+                </a>
+
+                <a href="#bulk-nudge" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                    Bulk Nudge
+                </a>
+
+                <a href="#ai-copilot" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                    AI Co-Pilot
+                </a>
+
+                <a href="#cohort" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    Cohort
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar" style="background: linear-gradient(135deg, #D4A574 0%, #E8D4A0 100%);">DM
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name">David</div>
+                        <div class="user-role">Admin</div>
+                    </div>
+                </div>
+                <button class="btn btn-ghost btn-sm" onclick="window.savskills.logout()">Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div>
+                    <h1>Admin Dashboard</h1>
+                    <p class="text-secondary">Cohort 12 - Week 3 (Influence)</p>
+                </div>
+            </header>
+
+            <!-- Stats Overview -->
+            <section id="overview" class="dashboard-section">
+                <div class="dashboard-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">24</span>
+                        <span class="stat-label">Active Students</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-value">87%</span>
+                        <span class="stat-label">Engagement Rate</span>
+                    </div>
+
+                    <div class="stat-card risk-warning">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">At-Risk Students</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-value">18</span>
+                        <span class="stat-label">Journal Entries Today</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Risk Radar -->
+            <section id="risk-radar" class="dashboard-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Risk Radar</h3>
+                        <p class="card-subtitle">Students requiring intervention</p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="risk-filters mb-4">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="red">
+                                <span class="risk-indicator red"></span> Critical (3)
+                            </button>
+                            <button class="filter-btn" data-filter="yellow">
+                                <span class="risk-indicator yellow"></span> Warning (5)
+                            </button>
+                            <button class="filter-btn" data-filter="green">
+                                <span class="risk-indicator green"></span> Good (16)
+                            </button>
+                        </div>
+
+                        <div class="risk-list">
+                            <div class="risk-item red">
+                                <div class="risk-student">
+                                    <span class="risk-indicator red"></span>
+                                    <div>
+                                        <strong>Malik Osei</strong>
+                                        <p class="text-muted">No journal entries for 5 days</p>
+                                    </div>
+                                </div>
+                                <div class="risk-actions">
+                                    <button class="btn btn-sm btn-primary">Send Message</button>
+                                </div>
+                            </div>
+
+                            <div class="risk-item red">
+                                <div class="risk-student">
+                                    <span class="risk-indicator red"></span>
+                                    <div>
+                                        <strong>Zara Mwangi</strong>
+                                        <p class="text-muted">Low engagement score (32%)</p>
+                                    </div>
+                                </div>
+                                <div class="risk-actions">
+                                    <button class="btn btn-sm btn-primary">Send Message</button>
+                                </div>
+                            </div>
+
+                            <div class="risk-item red">
+                                <div class="risk-student">
+                                    <span class="risk-indicator red"></span>
+                                    <div>
+                                        <strong>Kwame Asante</strong>
+                                        <p class="text-muted">Missed last 3 masterclasses</p>
+                                    </div>
+                                </div>
+                                <div class="risk-actions">
+                                    <button class="btn btn-sm btn-primary">Send Message</button>
+                                </div>
+                            </div>
+
+                            <div class="risk-item yellow">
+                                <div class="risk-student">
+                                    <span class="risk-indicator yellow"></span>
+                                    <div>
+                                        <strong>Amara Ndiaye</strong>
+                                        <p class="text-muted">Declining journal quality</p>
+                                    </div>
+                                </div>
+                                <div class="risk-actions">
+                                    <button class="btn btn-sm btn-outline">Monitor</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bulk Nudge -->
+            <section id="bulk-nudge" class="dashboard-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Bulk Nudge</h3>
+                        <p class="card-subtitle">Send personalized messages to multiple students at once</p>
+                    </div>
+
+                    <div class="card-body">
+                        <form id="bulkNudgeForm">
+                            <div class="form-group">
+                                <label class="form-label">Recipient Group</label>
+                                <select class="form-select" id="recipientGroup">
+                                    <option value="all">All Students (24)</option>
+                                    <option value="at-risk">At-Risk Students (3)</option>
+                                    <option value="inactive">Inactive This Week (5)</option>
+                                    <option value="high-performers">High Performers (10)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Message Template</label>
+                                <select class="form-select" id="messageTemplate">
+                                    <option value="">Select a template...</option>
+                                    <option value="encouragement">Weekly Encouragement</option>
+                                    <option value="reminder">Journal Reminder</option>
+                                    <option value="kudos">Kudos for Great Work</option>
+                                    <option value="custom">Custom Message</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-textarea" id="bulkMessage" rows="6"
+                                    placeholder="Type your message here. Use {{name}} to personalize with student names.">Hi {{name}},
+
+I noticed your recent journal entry on Influence - great insights! Keep up the excellent work. Your growth is inspiring to watch.
+
+- David</textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Send to <span
+                                        id="recipientCount">24</span> Students</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Co-Pilot -->
+            <section id="ai-copilot" class="dashboard-section">
+                <div class="card card-premium">
+                    <div class="card-header">
+                        <h3 class="card-title">AI Co-Pilot Intervention Queue</h3>
+                        <p class="card-subtitle">AI-recommended actions for maximum impact</p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="intervention-list">
+                            <div class="intervention-item high-priority">
+                                <div class="intervention-header">
+                                    <span class="badge badge-premium">High Impact</span>
+                                    <span class="text-muted">2 min ago</span>
+                                </div>
+                                <h5>Send Kudos to Janan</h5>
+                                <p>Janan wrote a profound reflection on Influence today (engagement score: 95%). A
+                                    personalized message will boost morale.</p>
+                                <div class="intervention-suggestion">
+                                    <strong>Suggested message:</strong>
+                                    <p class="suggestion-text">"Janan, your journal entry today showed deep
+                                        understanding of how influence works in logistics. The way you described
+                                        handling the Mombasa situation was brilliant. This is leadership in action!"</p>
+                                </div>
+                                <div class="intervention-actions">
+                                    <button class="btn btn-primary btn-sm">Approve & Send</button>
+                                    <button class="btn btn-ghost btn-sm">Edit</button>
+                                    <button class="btn btn-ghost btn-sm">Dismiss</button>
+                                </div>
+                            </div>
+
+                            <div class="intervention-item medium-priority">
+                                <div class="intervention-header">
+                                    <span class="badge badge-warning">Medium Impact</span>
+                                    <span class="text-muted">15 min ago</span>
+                                </div>
+                                <h5>Check in with Fatima</h5>
+                                <p>Fatima's recent journal entries indicate confusion about conflict resolution. A
+                                    5-minute call could help.</p>
+                                <div class="intervention-actions">
+                                    <button class="btn btn-secondary btn-sm">Schedule Call</button>
+                                    <button class="btn btn-ghost btn-sm">Dismiss</button>
+                                </div>
+                            </div>
+
+                            <div class="intervention-item low-priority">
+                                <div class="intervention-header">
+                                    <span class="badge">Low Priority</span>
+                                    <span class="text-muted">1 hour ago</span>
+                                </div>
+                                <h5>Celebrate Milestone</h5>
+                                <p>Cohort reached 500 total journal entries! Consider sending a celebration message to
+                                    boost morale.</p>
+                                <div class="intervention-actions">
+                                    <button class="btn btn-ghost btn-sm">Send Celebration</button>
+                                    <button class="btn btn-ghost btn-sm">Dismiss</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cohort Overview -->
+            <section id="cohort" class="dashboard-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Cohort 12 Overview</h3>
+                        <p class="card-subtitle">Real-time engagement metrics</p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="cohort-metrics">
+                            <canvas id="engagementChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script>
+        // Protect page - require admin authentication
+        window.savskills.requireAuth(['admin']);
+
+        // Risk filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+                const items = document.querySelectorAll('.risk-item');
+
+                items.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Update recipient count in bulk nudge
+        document.getElementById('recipientGroup')?.addEventListener('change', function () {
+            const counts = {
+                'all': 24,
+                'at-risk': 3,
+                'inactive': 5,
+                'high-performers': 10
+            };
+            document.getElementById('recipientCount').textContent = counts[this.value] || 0;
+        });
+
+        // Handle bulk nudge form
+        document.getElementById('bulkNudgeForm')?.addEventListener('submit', function (e) {
+            e.preventDefault();
+            window.savskills.showNotification('Messages sent successfully!', 'success');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,344 @@
+/* ============================================
+   ACHIEVEMENT NUDGE SYSTEM STYLES
+   ============================================ */
+
+/* ----- FLOATING NUDGE ----- */
+.achievement-nudge {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    max-width: 400px;
+    background: linear-gradient(135deg, var(--color-off-white) 0%, var(--color-cream) 100%);
+    padding: var(--space-4);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    border: 2px solid var(--color-gold);
+    z-index: var(--z-modal);
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+    animation: slideIn 0.5s var(--ease-smooth);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(500px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.nudge-icon {
+    font-size: var(--font-size-4xl);
+    flex-shrink: 0;
+}
+
+.nudge-content {
+    flex: 1;
+}
+
+.nudge-content h4 {
+    font-size: var(--font-size-lg);
+    color: var(--color-navy);
+    margin-bottom: var(--space-1);
+}
+
+.nudge-content p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-normal);
+    margin: 0;
+}
+
+.nudge-cta {
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.nudge-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    line-height: 1;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: var(--transition-colors);
+}
+
+.nudge-close:hover {
+    color: var(--color-navy);
+}
+
+/* ----- ACHIEVEMENT MODAL ----- */
+.achievement-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 46, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    animation: fadeIn var(--duration-slow) var(--ease-in-out);
+}
+
+.achievement-modal-content {
+    background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-off-white) 100%);
+    padding: var(--space-8);
+    border-radius: var(--radius-2xl);
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow-xl);
+}
+
+.achievement-celebration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.achievement-icon {
+    font-size: 80px;
+    margin-bottom: var(--space-4);
+    animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.achievement-modal h2 {
+    font-size: var(--font-size-3xl);
+    color: var(--color-navy);
+    margin-bottom: var(--space-6);
+    font-family: var(--font-display);
+}
+
+.achievement-badge {
+    margin-bottom: var(--space-4);
+}
+
+.badge-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-3);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-navy);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+    border: 4px solid var(--color-cream);
+}
+
+.achievement-badge h3 {
+    font-size: var(--font-size-2xl);
+    color: var(--color-gold);
+    margin: 0;
+}
+
+.achievement-message {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+    line-height: var(--line-height-relaxed);
+}
+
+.achievement-points {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--space-6);
+    padding: var(--space-4);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+    border-radius: var(--radius-lg);
+}
+
+.points-earned {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gold);
+    font-family: var(--font-display);
+}
+
+.points-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wider);
+}
+
+/* ----- CONFETTI ANIMATION ----- */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    z-index: var(--z-tooltip);
+    animation: confettiFall linear forwards;
+    pointer-events: none;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ----- PROGRESS CARD IN DASHBOARD ----- */
+#achievementProgress {
+    background: linear-gradient(135deg, var(--color-off-white) 0%, var(--color-cream) 100%);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-gold);
+    margin-bottom: var(--space-4);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.progress-header h4 {
+    font-size: var(--font-size-xl);
+    color: var(--color-navy);
+    margin: 0;
+}
+
+.total-points {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.points-value {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gold);
+    font-family: var(--font-display);
+    line-height: 1;
+}
+
+.badges-earned {
+    margin-bottom: var(--space-4);
+}
+
+.badges-earned h5 {
+    font-size: var(--font-size-base);
+    color: var(--color-navy);
+    margin-bottom: var(--space-2);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.badge-list {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.mini-badge {
+    padding: var(--space-1) var(--space-2);
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
+    color: var(--color-navy);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.next-milestone {
+    padding: var(--space-3);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+}
+
+.next-milestone h5 {
+    font-size: var(--font-size-sm);
+    color: var(--color-navy);
+    margin-bottom: var(--space-2);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.next-milestone p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-3);
+}
+
+.milestone-progress {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background-color: var(--color-border);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
+    transition: width var(--duration-slow) var(--ease-smooth);
+}
+
+.progress-text {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gold);
+}
+
+/* ----- RESPONSIVE DESIGN ----- */
+@media (max-width: 768px) {
+    .achievement-nudge {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+
+    .achievement-modal-content {
+        margin: var(--space-4);
+        padding: var(--space-6);
+    }
+
+    .badge-circle {
+        width: 100px;
+        height: 100px;
+        font-size: var(--font-size-lg);
+    }
+}

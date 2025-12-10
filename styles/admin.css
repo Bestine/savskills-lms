@@ -1,0 +1,240 @@
+/* ============================================
+   ADMIN DASHBOARD STYLES
+   ============================================ */
+
+/* ----- RISK WARNING ----- */
+.risk-warning {
+    background: linear-gradient(135deg, rgba(200, 120, 85, 0.1) 0%, rgba(200, 120, 85, 0.05) 100%);
+    border-left: 4px solid var(--color-error);
+}
+
+/* ----- RISK FILTERS ----- */
+.risk-filters {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: var(--transition-all);
+}
+
+.filter-btn:hover {
+    border-color: var(--color-gold);
+    background-color: var(--color-off-white);
+}
+
+.filter-btn.active {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-navy);
+}
+
+/* ----- RISK INDICATORS ----- */
+.risk-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.risk-indicator.red {
+    background-color: var(--color-error);
+    box-shadow: 0 0 0 3px rgba(200, 120, 85, 0.2);
+}
+
+.risk-indicator.yellow {
+    background-color: var(--color-warning);
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.2);
+}
+
+.risk-indicator.green {
+    background-color: var(--color-success);
+    box-shadow: 0 0 0 3px rgba(122, 138, 112, 0.2);
+}
+
+/* ----- RISK LIST ----- */
+.risk-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.risk-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-border);
+    transition: var(--transition-all);
+}
+
+.risk-item.red {
+    border-left-color: var(--color-error);
+    background: linear-gradient(90deg, rgba(200, 120, 85, 0.05) 0%, var(--color-surface) 100%);
+}
+
+.risk-item.yellow {
+    border-left-color: var(--color-warning);
+    background: linear-gradient(90deg, rgba(212, 165, 116, 0.05) 0%, var(--color-surface) 100%);
+}
+
+.risk-item.green {
+    border-left-color: var(--color-success);
+}
+
+.risk-item:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-sm);
+}
+
+.risk-student {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.risk-student strong {
+    display: block;
+    color: var(--color-navy);
+    margin-bottom: 4px;
+    font-size: var(--font-size-base);
+}
+
+.risk-student p {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    margin: 0;
+}
+
+.risk-actions {
+    display: flex;
+    gap: var(--space-2);
+}
+
+/* -----  INTERVENTION QUEUE ----- */
+.intervention-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.intervention-item {
+    padding: var(--space-4);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-border);
+    transition: var(--transition-all);
+}
+
+.intervention-item.high-priority {
+    border-color: var(--color-gold);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, var(--color-surface) 100%);
+}
+
+.intervention-item.medium-priority {
+    border-color: var(--color-warning);
+}
+
+.intervention-item.low-priority {
+    border-color: var(--color-border);
+}
+
+.intervention-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2);
+}
+
+.intervention-item h5 {
+    font-size: var(--font-size-lg);
+    color: var(--color-navy);
+    margin-bottom: var(--space-2);
+}
+
+.intervention-item>p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+    margin-bottom: var(--space-3);
+}
+
+.intervention-suggestion {
+    background-color: var(--color-off-white);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-3);
+}
+
+.intervention-suggestion strong {
+    display: block;
+    color: var(--color-navy);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-2);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.suggestion-text {
+    font-style: italic;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+.intervention-actions {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+/* ----- COHORT METRICS ----- */
+.cohort-metrics {
+    padding: var(--space-4);
+}
+
+#engagementChart {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ----- RESPONSIVE DESIGN ----- */
+@media (max-width: 768px) {
+    .risk-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+    }
+
+    .risk-actions {
+        width: 100%;
+    }
+
+    .risk-actions .btn {
+        flex: 1;
+    }
+
+    .intervention-actions {
+        flex-direction: column;
+    }
+
+    .intervention-actions .btn {
+        width: 100%;
+    }
+}

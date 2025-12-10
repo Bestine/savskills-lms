@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - SavSkills</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/design-system.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/auth.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+        <div class="auth-left">
+            <div class="auth-branding">
+                <h1 class="auth-logo">SAVSKILLS</h1>
+                <p class="auth-tagline">Transform Your Leadership Journey</p>
+            </div>
+
+            <div class="auth-info">
+                <h2 class="mb-4">Welcome Back</h2>
+                <p class="text-muted">Sign in to continue your transformation</p>
+            </div>
+        </div>
+
+        <div class="auth-right">
+            <div class="auth-form-container">
+                <h3 class="auth-title">Sign In</h3>
+                <p class="auth-subtitle">Access your dashboard</p>
+
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="you@example.com" required
+                            autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" class="form-input" placeholder="Enter your password"
+                            required autocomplete="current-password">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Sign In
+                        </button>
+                    </div>
+
+                    <div class="auth-divider">
+                        <span>or</span>
+                    </div>
+
+                    <div class="demo-accounts">
+                        <p class="text-center text-muted mb-3">Demo Accounts:</p>
+                        <div class="demo-buttons">
+                            <button type="button" class="btn btn-outline btn-sm demo-btn" data-role="student">
+                                Student View
+                            </button>
+                            <button type="button" class="btn btn-outline btn-sm demo-btn" data-role="admin">
+                                Admin View
+                            </button>
+                            <button type="button" class="btn btn-outline btn-sm demo-btn" data-role="alumni">
+                                Alumni View
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="auth-footer mt-4">
+                        <a href="../index.html" class="text-gold">← Back to Home</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        // Handle login form submission
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const result = window.savskills.login(email, password);
+
+            if (result.success) {
+                window.savskills.showNotification('Login successful! Redirecting...', 'success');
+
+                // Redirect to main dashboard home after short delay
+                setTimeout(() => {
+                    window.location.href = `../dashboard/home.html`;
+                }, 1000);
+            } else {
+                window.savskills.showNotification(result.error, 'error');
+            }
+        });
+
+        // Handle demo account buttons
+        document.querySelectorAll('.demo-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const role = this.getAttribute('data-role');
+                const user = window.savskills.mockUsers[role];
+
+                if (user) {
+                    document.getElementById('email').value = user.email;
+                    document.getElementById('password').value = user.password;
+
+                    window.savskills.showNotification(`Demo account loaded: ${user.name}`, 'info');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,422 @@
+/* ============================================
+   SAVSKILLS-INSPIRED DESIGN SYSTEM
+   Premium Minimalism with Luxury Details
+   ============================================ */
+
+/* ----- CSS RESET ----- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ----- COLOR PALETTE (ColorHunt Pastel) ----- */
+  /* Primary Colors */
+  --color-cream: #FFF2C6;
+  --color-cream-light: #FFF8DE;
+  --color-blue-soft: #AAC4F5;
+  --color-blue-medium: #8CA9FF;
+
+  /* Derived Neutrals */
+  --color-off-white: #FFFEF9;
+  --color-light-gray: #F0ECE3;
+  --color-medium-gray: #B8B5AC;
+  --color-dark-gray: #4A4A4A;
+  --color-charcoal: #2C2C2C;
+  --color-navy: #1A1A2E;
+
+  /* Accents - Blues as primary accent */
+  --color-primary: #8CA9FF;
+  --color-primary-light: #AAC4F5;
+  --color-primary-dark: #6B8DE8;
+  --color-secondary: #FFF2C6;
+  --color-secondary-dark: #F5E6A8;
+
+  /* Semantic Colors */
+  --color-success: #8CA9FF;
+  --color-warning: #FFF2C6;
+  --color-error: #FF8C94;
+  --color-info: #AAC4F5;
+
+  /* Surface & Text */
+  --color-background: var(--color-cream-light);
+  --color-surface: var(--color-off-white);
+  --color-text-primary: var(--color-navy);
+  --color-text-secondary: var(--color-charcoal);
+  --color-text-muted: var(--color-medium-gray);
+  --color-text-inverse: var(--color-off-white);
+
+  /* Borders & Dividers */
+  --color-border: var(--color-light-gray);
+  --color-border-subtle: rgba(0, 0, 0, 0.06);
+
+  /* ----- TYPOGRAPHY ----- */
+  /* Font Families */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Font Sizes - Balanced Premium Scale */
+  --font-size-xs: 0.8rem;
+  /* 13px */
+  --font-size-sm: 0.9rem;
+  /* 14px */
+  --font-size-base: 1rem;
+  /* 16px - standard base */
+  --font-size-md: 1.125rem;
+  /* 18px */
+  --font-size-lg: 1.375rem;
+  /* 22px */
+  --font-size-xl: 1.75rem;
+  /* 28px */
+  --font-size-2xl: 2.25rem;
+  /* 36px */
+  --font-size-3xl: 3rem;
+  /* 48px */
+  --font-size-4xl: 3.75rem;
+  /* 60px */
+  --font-size-5xl: 4.5rem;
+  /* 72px */
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.4;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+
+  /* ----- SPACING (More Generous) ----- */
+  /* Base: 8px unit, scaled up */
+  --space-1: 0.75rem;
+  /* 12px */
+  --space-2: 1.25rem;
+  /* 20px */
+  --space-3: 2rem;
+  /* 32px */
+  --space-4: 2.5rem;
+  /* 40px */
+  --space-5: 3rem;
+  /* 48px */
+  --space-6: 4rem;
+  /* 64px */
+  --space-8: 5rem;
+  /* 80px */
+  --space-10: 6rem;
+  /* 96px */
+  --space-12: 8rem;
+  /* 128px */
+  --space-16: 10rem;
+  /* 160px */
+
+  /* ----- SHADOWS ----- */
+  /* Multi-layer for premium depth */
+  --shadow-sm:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 1px 4px rgba(0, 0, 0, 0.02);
+
+  --shadow-md:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.03),
+    0 8px 16px rgba(0, 0, 0, 0.02);
+
+  --shadow-lg:
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.03),
+    0 16px 32px rgba(0, 0, 0, 0.02);
+
+  --shadow-xl:
+    0 8px 16px rgba(0, 0, 0, 0.04),
+    0 16px 32px rgba(0, 0, 0, 0.03),
+    0 32px 64px rgba(0, 0, 0, 0.02);
+
+  /* Inset shadow for depth */
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+
+  /* ----- BORDER RADIUS ----- */
+  --radius-sm: 0.25rem;
+  /* 4px */
+  --radius-md: 0.5rem;
+  /* 8px */
+  --radius-lg: 0.75rem;
+  /* 12px */
+  --radius-xl: 1rem;
+  /* 16px */
+  --radius-2xl: 1.5rem;
+  /* 24px */
+  --radius-full: 9999px;
+
+  /* ----- TRANSITIONS (Seamless & Smooth) ----- */
+  /* Durations - Slower for premium feel */
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 600ms;
+  --duration-slower: 800ms;
+
+  /* Easing Functions - Ultra-smooth */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.87, 0, 0.13, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Common transitions */
+  --transition-all: all var(--duration-base) var(--ease-in-out);
+  --transition-colors: color var(--duration-base) var(--ease-in-out),
+    background-color var(--duration-base) var(--ease-in-out),
+    border-color var(--duration-base) var(--ease-in-out);
+  --transition-transform: transform var(--duration-base) var(--ease-smooth);
+  --transition-opacity: opacity var(--duration-base) var(--ease-in-out);
+
+  /* ----- LAYOUT ----- */
+  --container-max-width: 1200px;
+  --container-padding: var(--space-4);
+
+  /* Breakpoints (for reference in JS) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* ----- Z-INDEX SCALE ----- */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+}
+
+/* ----- BASE STYLES ----- */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  font-weight: var(--font-weight-normal);
+}
+
+/* ----- TYPOGRAPHY ELEMENTS ----- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+}
+
+p {
+  margin-bottom: var(--space-3);
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: var(--transition-colors);
+}
+
+a:hover {
+  color: var(--color-gold-light);
+  text-decoration: underline;
+}
+
+/* ----- UTILITY CLASSES ----- */
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Text Alignment */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Font Weights */
+.font-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Text Colors */
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-inverse {
+  color: var(--color-text-inverse);
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-sage {
+  color: var(--color-sage);
+}
+
+/* Spacing Utilities */
+.mt-1 {
+  margin-top: var(--space-1);
+}
+
+.mt-2 {
+  margin-top: var(--space-2);
+}
+
+.mt-3 {
+  margin-top: var(--space-3);
+}
+
+.mt-4 {
+  margin-top: var(--space-4);
+}
+
+.mt-6 {
+  margin-top: var(--space-6);
+}
+
+.mt-8 {
+  margin-top: var(--space-8);
+}
+
+.mb-1 {
+  margin-bottom: var(--space-1);
+}
+
+.mb-2 {
+  margin-bottom: var(--space-2);
+}
+
+.mb-3 {
+  margin-bottom: var(--space-3);
+}
+
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
+
+.mb-6 {
+  margin-bottom: var(--space-6);
+}
+
+.mb-8 {
+  margin-bottom: var(--space-8);
+}
+
+.py-8 {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+.py-10 {
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-10);
+}
+
+.py-12 {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  :root {
+    --font-size-5xl: 2.441rem;
+    --font-size-4xl: 1.953rem;
+    --font-size-3xl: 1.563rem;
+  }
+
+  .container {
+    padding: 0 var(--space-2);
+  }
+}

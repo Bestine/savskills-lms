@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SavSkills</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/design-system.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <h1 class="nav-logo">SAVSKILLS</h1>
+
+            <div class="nav-user">
+                <div class="user-info-compact">
+                    <span class="user-greeting">Welcome, <strong id="userName">User</strong></span>
+                    <span class="user-role-badge" id="userRole">Student</span>
+                </div>
+                <button class="btn btn-ghost btn-sm" onclick="window.savskills.logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-home">
+        <div class="container">
+
+            <!-- Hero Section -->
+            <section class="dashboard-hero">
+                <h2 class="hero-title">Your Learning Hub</h2>
+                <p class="hero-subtitle">Access all your tools and resources in one place</p>
+            </section>
+
+            <!-- Quick Stats -->
+            <section class="quick-stats">
+                <div class="stat-box card-entrance">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-info">
+                        <h3 id="mainStat1">12</h3>
+                        <p>Days Active</p>
+                    </div>
+                </div>
+
+                <div class="stat-box card-entrance" style="animation-delay: 0.1s;">
+                    <div class="stat-icon">✍️</div>
+                    <div class="stat-info">
+                        <h3 id="mainStat2">8</h3>
+                        <p>Journal Entries</p>
+                    </div>
+                </div>
+
+                <div class="stat-box card-entrance" style="animation-delay: 0.2s;">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-info">
+                        <h3 id="mainStat3">67%</h3>
+                        <p>Progress</p>
+                    </div>
+                </div>
+
+                <div class="stat-box card-entrance" style="animation-delay: 0.3s;">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-info">
+                        <h3 id="mainStat4">150</h3>
+                        <p>Points</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Features Grid -->
+            <section class="features-dashboard">
+                <h3 class="section-title">Quick Access</h3>
+
+                <div class="features-grid">
+
+                    <!-- Daily Journal Card -->
+                    <div class="feature-card hover-lift card-entrance">
+                        <div class="feature-header">
+                            <div class="feature-icon-large">📝</div>
+                            <h4>Daily Journal</h4>
+                        </div>
+                        <p class="feature-description">Reflect on today's leadership principle and track your growth
+                            journey.</p>
+                        <div class="feature-footer">
+                            <a href="../student/dashboard.html#journal" class="btn btn-primary">Write Entry</a>
+                        </div>
+                    </div>
+
+                    <!-- Cohort Network Card -->
+                    <div class="feature-card hover-lift card-entrance" style="animation-delay: 0.1s;">
+                        <div class="feature-header">
+                            <div class="feature-icon-large">🤝</div>
+                            <h4>My Cohort</h4>
+                        </div>
+                        <p class="feature-description">Connect with fellow learners and build your professional network.
+                        </p>
+                        <div class="feature-footer">
+                            <a href="../student/dashboard.html#cohort" class="btn btn-outline">View Network</a>
+                        </div>
+                    </div>
+
+                    <!-- Progress Tracker Card -->
+                    <div class="feature-card hover-lift card-entrance" style="animation-delay: 0.2s;">
+                        <div class="feature-header">
+                            <div class="feature-icon-large">📈</div>
+                            <h4>Progress Tracker</h4>
+                        </div>
+                        <p class="feature-description">See your learning journey and track course completion milestones.
+                        </p>
+                        <div class="feature-footer">
+                            <a href="../student/dashboard.html#progress" class="btn btn-outline">View Progress</a>
+                        </div>
+                    </div>
+
+                    <!-- Resources Card -->
+                    <div class="feature-card hover-lift card-entrance" style="animation-delay: 0.3s;">
+                        <div class="feature-header">
+                            <div class="feature-icon-large">📚</div>
+                            <h4>Resources</h4>
+                        </div>
+                        <p class="feature-description">Access course materials, videos, and learning resources.</p>
+                        <div class="feature-footer">
+                            <a href="#" class="btn btn-outline">Browse Library</a>
+                        </div>
+                    </div>
+
+                    <!-- Achievements Card -->
+                    <div class="feature-card hover-lift card-entrance" style="animation-delay: 0.4s;">
+                        <div class="feature-header">
+                            <div class="feature-icon-large">🎖️</div>
+                            <h4>Achievements</h4>
+                        </div>
+                        <p class="feature-description">View your badges, points, and celebrate your milestones.</p>
+                        <div class="feature-footer">
+                            <a href="../student/dashboard.html#overview" class="btn btn-outline">View Badges</a>
+                        </div>
+                    </div>
+
+                    <!-- Community Card -->
+                    <div class="feature-card hover-lift card-entrance" style="animation-delay: 0.5s;">
+                        <div class="feature-header">
+                            <div class="feature-icon-large">💬</div>
+                            <h4>Community</h4>
+                        </div>
+                        <p class="feature-description">Engage with discussions, share insights, and learn together.</p>
+                        <div class="feature-footer">
+                            <a href="#" class="btn btn-outline">Join Discussion</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="recent-activity">
+                <h3 class="section-title">Recent Activity</h3>
+
+                <div class="activity-list">
+                    <div class="activity-item card-entrance">
+                        <div class="activity-icon success">✓</div>
+                        <div class="activity-content">
+                            <h5>Journal Entry Submitted</h5>
+                            <p>Reflection on "Influence" - 2 hours ago</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-item card-entrance" style="animation-delay: 0.1s;">
+                        <div class="activity-icon info">🎖️</div>
+                        <div class="activity-content">
+                            <h5>Achievement Unlocked</h5>
+                            <p>3-Day Streak badge earned - Yesterday</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-item card-entrance" style="animation-delay: 0.2s;">
+                        <div class="activity-icon primary">👥</div>
+                        <div class="activity-content">
+                            <h5>New Cohort Connection</h5>
+                            <p>Connected with Kwame Asante - 2 days ago</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script>
+        // Protect page - require authentication
+        if (!window.savskills.isAuthenticated()) {
+            window.location.href = '../auth/login.html';
+        }
+
+        // Load user info
+        const user = window.savskills.getCurrentUser();
+        if (user) {
+            document.getElementById('userName').textContent = user.name;
+            document.getElementById('userRole').textContent = user.role.charAt(0).toUpperCase() + user.role.slice(1);
+
+            // Customize stats based on role
+            if (user.role === 'admin') {
+                document.getElementById('mainStat1').textContent = '24';
+                document.getElementById('mainStat2').textContent = '18';
+                document.getElementById('mainStat3').textContent = '87%';
+                document.getElementById('mainStat4').textContent = '3';
+
+                document.querySelector('.stat-box:nth-child(1) p').textContent = 'Active Students';
+                document.querySelector('.stat-box:nth-child(2) p').textContent = 'Entries Today';
+                document.querySelector('.stat-box:nth-child(3) p').textContent = 'Engagement';
+                document.querySelector('.stat-box:nth-child(4) p').textContent = 'At Risk';
+            } else if (user.role === 'alumni') {
+                document.getElementById('mainStat1').textContent = '6';
+                document.getElementById('mainStat2').textContent = '3';
+                document.getElementById('mainStat3').textContent = '12';
+                document.getElementById('mainStat4').textContent = '2';
+
+                document.querySelector('.stat-box:nth-child(1) p').textContent = 'Months Alumni';
+                document.querySelector('.stat-box:nth-child(2) p').textContent = 'Mentees';
+                document.querySelector('.stat-box:nth-child(3) p').textContent = 'Connections';
+                document.querySelector('.stat-box:nth-child(4) p').textContent = 'Referrals';
+            }
+        }
+    </script>
+</body>
+
+</html>

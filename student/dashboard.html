@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - SavSkills</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/design-system.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/student.css">
+    <link rel="stylesheet" href="../styles/nudge-system.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-logo">SAVSKILLS</h2>
+                <span class="badge badge-premium">Student</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#overview" class="sidebar-link active">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" />
+                        <rect x="14" y="3" width="7" height="7" />
+                        <rect x="14" y="14" width="7" height="7" />
+                        <rect x="3" y="14" width="7" height="7" />
+                    </svg>
+                    Overview
+                </a>
+
+                <a href="#journal" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                    </svg>
+                    Daily Journal
+                </a>
+
+                <a href="#cohort" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    My Cohort
+                </a>
+
+                <a href="#progress" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="1" x2="12" y2="23" />
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                    </svg>
+                    Progress
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">JO</div>
+                    <div class="user-info">
+                        <div class="user-name">Janan</div>
+                        <div class="user-role">Student</div>
+                    </div>
+                </div>
+                <button class="btn btn-ghost btn-sm" onclick="window.savskills.logout()">Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div>
+                    <h1>Welcome Back, Janan</h1>
+                    <p class="text-secondary" id="currentDate"></p>
+                </div>
+            </header>
+
+            <!-- Stats Overview -->
+            <section id="overview" class="dashboard-section">
+                <div class="dashboard-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">12</span>
+                        <span class="stat-label">Days Active</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-value">8</span>
+                        <span class="stat-label">Journal Entries</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-value">24</span>
+                        <span class="stat-label">Cohort Members</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-value">67%</span>
+                        <span class="stat-label">Course Progress</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievement Progress Card -->
+            <section class="dashboard-section">
+                <div id="achievementProgress"></div>
+            </section>
+
+            <!-- Daily Journal Section -->
+            <section id="journal" class="dashboard-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Daily Journal</h3>
+                        <p class="card-subtitle">Reflect on today's leadership principle: <strong
+                                class="text-gold">Influence</strong></p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="journal-prompt">
+                            <div class="prompt-icon">💡</div>
+                            <div class="prompt-text">
+                                <strong>Today's Reflection Prompt:</strong>
+                                <p>"How did you use influence today to create positive change? Describe a situation
+                                    where your leadership made an impact."</p>
+                            </div>
+                        </div>
+
+                        <form id="journalForm" class="journal-form">
+                            <div class="form-group">
+                                <label for="journalEntry" class="form-label">Your Reflection</label>
+                                <textarea id="journalEntry" class="form-textarea journal-textarea" rows="8"
+                                    placeholder="Today I realized that influence is not about authority, but about inspiring others through authentic leadership..."></textarea>
+                                <span class="form-helper"><span id="wordCount">0</span> words</span>
+                            </div>
+
+                            <div class="journal-actions">
+                                <button type="button" class="btn btn-ghost" onclick="saveDraft()">Save Draft</button>
+                                <button type="submit" class="btn btn-primary">Submit Entry</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Recent Entries -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h4 class="card-title">Recent Reflections</h4>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="journal-history">
+                            <div class="journal-entry-preview">
+                                <div class="entry-meta">
+                                    <span class="entry-date">Dec 9, 2025</span>
+                                    <span class="badge badge-premium">Conflict Resolution</span>
+                                </div>
+                                <p class="entry-excerpt">"Today's session on conflict management opened my eyes to the
+                                    power of active listening. In our logistics team meeting..."</p>
+                                <a href="#" class="entry-link">Read full entry →</a>
+                            </div>
+
+                            <div class="journal-entry-preview">
+                                <div class="entry-meta">
+                                    <span class="entry-date">Dec 8, 2025</span>
+                                    <span class="badge badge-success">Communication</span>
+                                </div>
+                                <p class="entry-excerpt">"I practiced transparent communication with my team today.
+                                    Instead of hiding the challenge we face with the Mombasa shipment..."</p>
+                                <a href="#" class="entry-link">Read full entry →</a>
+                            </div>
+
+                            <div class="journal-entry-preview">
+                                <div class="entry-meta">
+                                    <span class="entry-date">Dec 7, 2025</span>
+                                    <span class="badge badge-warning">Decision Making</span>
+                                </div>
+                                <p class="entry-excerpt">"Leadership means making tough calls. Today I had to decide
+                                    between meeting the deadline or ensuring quality..."</p>
+                                <a href="#" class="entry-link">Read full entry →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cohort Spider Web -->
+            <section id="cohort" class="dashboard-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Cohort Network</h3>
+                        <p class="card-subtitle">Your connections and interactions with fellow students</p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="spider-web-container">
+                            <canvas id="spiderWebCanvas" width="600" height="400"></canvas>
+                        </div>
+
+                        <div class="cohort-stats mt-4">
+                            <div class="cohort-stat">
+                                <span class="stat-value">24</span>
+                                <span class="stat-label">Total Members</span>
+                            </div>
+                            <div class="cohort-stat">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Active Connections</span>
+                            </div>
+                            <div class="cohort-stat">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Countries</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Tracker -->
+            <section id="progress" class="dashboard-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Learning Progress</h3>
+                        <p class="card-subtitle">Your journey through the AfTLP program</p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="progress-timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h5>Week 1: Self-Awareness</h5>
+                                    <p class="text-muted">Understanding your leadership identity</p>
+                                    <span class="badge badge-success">Completed</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item completed">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h5>Week 2: Communication</h5>
+                                    <p class="text-muted">Mastering transparent dialogue</p>
+                                    <span class="badge badge-success">Completed</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item active">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h5>Week 3: Influence</h5>
+                                    <p class="text-muted">Leading through inspiration</p>
+                                    <span class="badge badge-premium">In Progress</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h5>Week 4: Conflict Resolution</h5>
+                                    <p class="text-muted">Turning challenges into opportunities</p>
+                                    <span class="badge">Upcoming</span>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h5>Week 5: Decision Making</h5>
+                                    <p class="text-muted">Strategic thinking for leaders</p>
+                                    <span class="badge">Upcoming</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/student.js"></script>
+    <script src="../scripts/nudge-system.js"></script>
+
+    <script>
+        // Protect page - require student authentication
+        window.savskills.requireAuth(['student']);
+
+        // Update current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+
+</html>

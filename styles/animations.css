@@ -1,0 +1,344 @@
+/* ============================================
+   ENHANCED ANIMATIONS
+   Cool & Seamless Transitions
+   ============================================ */
+
+/* ----- SMOOTH PAGE TRANSITIONS ----- */
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: pageLoad var(--duration-slow) var(--ease-out);
+}
+
+/* ----- FLOATING ANIMATION ----- */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.animate-float {
+    animation: float 3s var(--ease-smooth) infinite;
+}
+
+/* -----GRADIENT SHIFT ANIMATION ----- */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 5s var(--ease-smooth) infinite;
+}
+
+/* ----- PULSE GLOW ----- */
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(140, 169, 255, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(140, 169, 255, 0.6);
+    }
+}
+
+.animate-pulse {
+    animation: pulseGlow 2s var(--ease-smooth) infinite;
+}
+
+/* ----- CARD ENTRANCE ----- */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.card-entrance {
+    animation: cardEntrance var(--duration-slower) var(--ease-out);
+}
+
+/* Stagger children animations */
+.card-entrance:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.card-entrance:nth-child(2) {
+    animation-delay: 100ms;
+}
+
+.card-entrance:nth-child(3) {
+    animation-delay: 200ms;
+}
+
+.card-entrance:nth-child(4) {
+    animation-delay: 300ms;
+}
+
+/* ----- TEXT REVEAL ----- */
+@keyframes textReveal {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.text-reveal {
+    animation: textReveal var(--duration-slow) var(--ease-out);
+}
+
+/* ----- SHIMMER EFFECT ----- */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            transparent 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* ----- RIPPLE EFFECT ----- */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: rgba(140, 169, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 1s var(--ease-out);
+}
+
+/* ----- SMOOTH SCROLL BEHAVIOR ----- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-cream-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-blue-soft);
+    border-radius: var(--radius-full);
+    border: 3px solid var(--color-cream-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-blue-medium);
+}
+
+/* ----- INTERACTIVE HOVER ANIMATIONS ----- */
+.hover-lift {
+    transition: transform var(--duration-base) var(--ease-out),
+        box-shadow var(--duration-base) var(--ease-out);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(140, 169, 255, 0.2);
+}
+
+.hover-tilt {
+    transition: transform var(--duration-base) var(--ease-smooth);
+}
+
+.hover-tilt:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
+}
+
+/* ----- BUTTON RIPPLE ON CLICK ----- */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width var(--duration-slow) var(--ease-out),
+        height var(--duration-slow) var(--ease-out);
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ----- BADGE ANIMATIONS ----- */
+.badge {
+    animation: badgePop var(--duration-base) var(--ease-bounce);
+}
+
+@keyframes badgePop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ----- LOADING STATES ----- */
+@keyframes skeletonLoading {
+    0% {
+        background-position: -200px 0;
+    }
+
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg,
+            var(--color-light-gray) 0px,
+            rgba(255, 255, 255, 0.8) 40px,
+            var(--color-light-gray) 80px);
+    background-size: 200px 100%;
+    animation: skeletonLoading 1.2s ease-in-out infinite;
+}
+
+/* ----- ADD TO EXISTING ELEMENTS ----- */
+.card {
+    transition: all var(--duration-base) var(--ease-out);
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 16px 48px rgba(140, 169, 255, 0.15);
+}
+
+.btn {
+    transition: all var(--duration-base) var(--ease-out);
+}
+
+/* Navigation link underline animation */
+.nav-link::after {
+    transition: width var(--duration-base) var(--ease-smooth),
+        background-color var(--duration-base) var(--ease-smooth);
+}
+
+/* Input focus animations */
+.form-input:focus,
+.form-textarea:focus {
+    transform: scale(1.01);
+    transition: all var(--duration-base) var(--ease-smooth);
+}
+
+/* ----- STATS COUNTER ANIMATION ----- */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-value {
+    animation: countUp var(--duration-slow) var(--ease-out);
+}
+
+/* ----- BREATHING ANIMATION ----- */
+@keyframes breathe {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+.animate-breathe {
+    animation: breathe 3s var(--ease-smooth) infinite;
+}
