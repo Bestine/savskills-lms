@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Transform your leadership journey with SavSkills - Premium learning platform for African leaders">
+  <title>SavSkills - Leadership Development Platform</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/design-system.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/animations.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">SAVSKILLS</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="auth/login.html" class="btn btn-primary btn-sm">Sign In</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-background"></div>
+    <div class="container">
+      <div class="hero-content animate-fade-in">
+        <h1 class="hero-title">
+          Transform Your<br>
+          Leadership Journey
+        </h1>
+        <p class="hero-subtitle">
+          Experience premium learning designed for African leaders.<br>
+          Develop authentic leadership skills through structured reflection,<br>
+          AI-powered insights, and a vibrant community.
+        </p>
+        <div class="hero-cta">
+          <a href="auth/login.html" class="btn btn-primary btn-lg">Start Your Journey</a>
+          <a href="#about" class="btn btn-outline btn-lg">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition Section -->
+  <section class="section py-12" id="about">
+    <div class="container">
+      <div class="section-header text-center mb-8">
+        <h2>A Platform Built for Impact</h2>
+        <p class="text-secondary">Three distinct experiences, one powerful ecosystem</p>
+      </div>
+
+      <div class="grid grid-cols-3">
+        <!-- Student View Card -->
+        <div class="card card-feature card-entrance hover-lift animate-fade-in">
+          <div class="feature-icon student-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+            </svg>
+          </div>
+          <div class="card-title">Student Experience</div>
+          <p>Daily journaling, cohort connections, and personalized growth tracking. Transform through reflection and
+            community.</p>
+          <a href="student/dashboard.html" class="btn btn-ghost mt-3">Explore Student View →</a>
+        </div>
+
+        <!-- Admin View Card -->
+        <div class="card card-feature card-entrance hover-lift animate-fade-in" style="animation-delay: 0.1s;">
+          <div class="feature-icon admin-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M3 3v18h18" />
+              <path d="m19 9-5 5-4-4-3 3" />
+            </svg>
+          </div>
+          <div class="card-title">Admin Dashboard</div>
+          <p>AI-powered risk detection, bulk messaging, and intervention tools. Scale your coaching without losing the
+            personal touch.</p>
+          <a href="admin/dashboard.html" class="btn btn-ghost mt-3">Explore Admin View →</a>
+        </div>
+
+        <!-- Alumni View Card -->
+        <div class="card card-feature card-entrance hover-lift animate-fade-in" style="animation-delay: 0.2s;">
+          <div class="feature-icon alumni-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4" />
+              <path d="M12 8h.01" />
+            </svg>
+          </div>
+          <div class="card-title">Alumni Network</div>
+          <p>Premium content library, smart mentorship matching, and career opportunities. Your growth never stops.</p>
+          <a href="alumni/dashboard.html" class="btn btn-ghost mt-3">Explore Alumni View →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section features-section py-12" id="features">
+    <div class="container">
+      <div class="section-header text-center mb-8">
+        <h2>Premium Features for Every User</h2>
+        <p class="text-secondary">Thoughtfully designed tools that make a difference</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-item animate-slide-in">
+          <h4>Daily Journaling</h4>
+          <p>Structured reflection prompts based on leadership principles. Track your growth over time.</p>
+        </div>
+
+        <div class="feature-item animate-slide-in" style="animation-delay: 0.1s;">
+          <h4>Cohort Spider Web</h4>
+          <p>Visualize your connections and see your network grow in real-time.</p>
+        </div>
+
+        <div class="feature-item animate-slide-in" style="animation-delay: 0.2s;">
+          <h4>Risk Radar</h4>
+          <p>AI-powered early warning system for coaches to identify struggling students.</p>
+        </div>
+
+        <div class="feature-item animate-slide-in" style="animation-delay: 0.3s;">
+          <h4>Smart Mentor Match</h4>
+          <p>Algorithm-driven connections between alumni and current students.</p>
+        </div>
+
+        <div class="feature-item animate-slide-in" style="animation-delay: 0.4s;">
+          <h4>Premium Library</h4>
+          <p>Exclusive access to masterclasses and advanced micro-modules.</p>
+        </div>
+
+        <div class="feature-item animate-slide-in" style="animation-delay: 0.5s;">
+          <h4>Network Directory</h4>
+          <p>Connect with trusted leaders across Africa for partnerships and opportunities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section py-12">
+    <div class="container text-center">
+      <h2 class="mb-4">Ready to Transform Your Leadership?</h2>
+      <p class="text-secondary mb-6">Join thousands of leaders who have discovered their potential</p>
+      <a href="auth/login.html" class="btn btn-primary btn-lg">Get Started Today</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-logo">SAVSKILLS</h3>
+          <p class="text-muted">Empowering African leaders through transformative education</p>
+        </div>
+
+        <div class="footer-section">
+          <h5 class="footer-title">Platform</h5>
+          <ul class="footer-links">
+            <li><a href="student/dashboard.html">Student Portal</a></li>
+            <li><a href="admin/dashboard.html">Admin Portal</a></li>
+            <li><a href="alumni/dashboard.html">Alumni Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h5 class="footer-title">Resources</h5>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h5 class="footer-title">Connect</h5>
+          <p class="text-muted">hello@savskills.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="text-muted">&copy; 2025 SavSkills. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

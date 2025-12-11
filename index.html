@@ -1,221 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Transform your leadership journey with SavSkills - Premium learning platform for African leaders">
-  <title>SavSkills - Leadership Development Platform</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/design-system.css">
-  <link rel="stylesheet" href="styles/components.css">
-  <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/animations.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savskill - Leadership Transformation Platform</title>
+    <meta name="description" content="Transform into a next-generation leader with Savskill's personalized learning platform">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-  <!-- Navigation -->
-  <nav class="nav" id="mainNav">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">SAVSKILLS</a>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#features" class="nav-link">Features</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li><a href="auth/login.html" class="btn btn-primary btn-sm">Sign In</a></li>
-      </ul>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="page active">
+        <div class="loading-content">
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="Savskill Logo" class="loading-logo">
+            </div>
+            <h1 class="brand-title">Savskill</h1>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
     </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-background"></div>
-    <div class="container">
-      <div class="hero-content animate-fade-in">
-        <h1 class="hero-title">
-          Transform Your<br>
-          Leadership Journey
-        </h1>
-        <p class="hero-subtitle">
-          Experience premium learning designed for African leaders.<br>
-          Develop authentic leadership skills through structured reflection,<br>
-          AI-powered insights, and a vibrant community.
-        </p>
-        <div class="hero-cta">
-          <a href="auth/login.html" class="btn btn-primary btn-lg">Start Your Journey</a>
-          <a href="#about" class="btn btn-outline btn-lg">Learn More</a>
+    <!-- Welcome Page -->
+    <div id="welcome-page" class="page">
+        <div class="welcome-container">
+            <div class="welcome-content">
+                <h1 class="welcome-title">Welcome</h1>
+                <p class="welcome-motto">Here we build the next transformative leader,<br><span class="gradient-text">Your future is now</span></p>
+                <button id="join-btn" class="cta-button">JOIN</button>
+            </div>
+            <div class="welcome-decoration">
+                <div class="floating-circle circle-1"></div>
+                <div class="floating-circle circle-2"></div>
+                <div class="floating-circle circle-3"></div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Value Proposition Section -->
-  <section class="section py-12" id="about">
-    <div class="container">
-      <div class="section-header text-center mb-8">
-        <h2>A Platform Built for Impact</h2>
-        <p class="text-secondary">Three distinct experiences, one powerful ecosystem</p>
-      </div>
+    <!-- Auth Page -->
+    <div id="auth-page" class="page">
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
 
-      <div class="grid grid-cols-3">
-        <!-- Student View Card -->
-        <div class="card card-feature card-entrance hover-lift animate-fade-in">
-          <div class="feature-icon student-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-              <path d="M6 12v5c3 3 9 3 12 0v-5" />
-            </svg>
-          </div>
-          <div class="card-title">Student Experience</div>
-          <p>Daily journaling, cohort connections, and personalized growth tracking. Transform through reflection and
-            community.</p>
-          <a href="student/dashboard.html" class="btn btn-ghost mt-3">Explore Student View →</a>
+            <!-- Login Form -->
+            <div id="login-form" class="auth-form active">
+                <h2>Welcome Back</h2>
+                <form id="login-form-element">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="cta-button">Login</button>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signup-form" class="auth-form">
+                <h2>Join Savskill</h2>
+                <form id="signup-form-element">
+                    <div class="form-group">
+                        <label for="signup-username">Username</label>
+                        <input type="text" id="signup-username" required placeholder="Choose a username">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" required placeholder="••••••••">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password-confirm">Confirm Password</label>
+                        <input type="password" id="signup-password-confirm" required placeholder="••••••••">
+                    </div>
+                    <div class="form-note">
+                        <p>A verification email will be sent to your email address.</p>
+                    </div>
+                    <button type="submit" class="cta-button">Register</button>
+                </form>
+            </div>
         </div>
-
-        <!-- Admin View Card -->
-        <div class="card card-feature card-entrance hover-lift animate-fade-in" style="animation-delay: 0.1s;">
-          <div class="feature-icon admin-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2">
-              <path d="M3 3v18h18" />
-              <path d="m19 9-5 5-4-4-3 3" />
-            </svg>
-          </div>
-          <div class="card-title">Admin Dashboard</div>
-          <p>AI-powered risk detection, bulk messaging, and intervention tools. Scale your coaching without losing the
-            personal touch.</p>
-          <a href="admin/dashboard.html" class="btn btn-ghost mt-3">Explore Admin View →</a>
-        </div>
-
-        <!-- Alumni View Card -->
-        <div class="card card-feature card-entrance hover-lift animate-fade-in" style="animation-delay: 0.2s;">
-          <div class="feature-icon alumni-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 16v-4" />
-              <path d="M12 8h.01" />
-            </svg>
-          </div>
-          <div class="card-title">Alumni Network</div>
-          <p>Premium content library, smart mentorship matching, and career opportunities. Your growth never stops.</p>
-          <a href="alumni/dashboard.html" class="btn btn-ghost mt-3">Explore Alumni View →</a>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Features Section -->
-  <section class="section features-section py-12" id="features">
-    <div class="container">
-      <div class="section-header text-center mb-8">
-        <h2>Premium Features for Every User</h2>
-        <p class="text-secondary">Thoughtfully designed tools that make a difference</p>
-      </div>
+    <!-- Assessment Page -->
+    <div id="assessment-page" class="page">
+        <div class="assessment-container">
+            <div class="assessment-header">
+                <h1>Leadership Assessment</h1>
+                <p>Help us understand your leadership skills to provide a personalized experience</p>
+                <div class="progress-indicator">
+                    <span class="current-question">1</span> / <span class="total-questions">12</span>
+                </div>
+            </div>
+            
+            <div class="assessment-questions">
+                <!-- Questions will be dynamically inserted here -->
+            </div>
 
-      <div class="features-grid">
-        <div class="feature-item animate-slide-in">
-          <h4>Daily Journaling</h4>
-          <p>Structured reflection prompts based on leadership principles. Track your growth over time.</p>
+            <div class="assessment-navigation">
+                <button id="prev-question" class="nav-btn" disabled>Previous</button>
+                <button id="next-question" class="nav-btn">Next</button>
+                <button id="submit-assessment" class="cta-button" style="display: none;">Complete Assessment</button>
+            </div>
         </div>
-
-        <div class="feature-item animate-slide-in" style="animation-delay: 0.1s;">
-          <h4>Cohort Spider Web</h4>
-          <p>Visualize your connections and see your network grow in real-time.</p>
-        </div>
-
-        <div class="feature-item animate-slide-in" style="animation-delay: 0.2s;">
-          <h4>Risk Radar</h4>
-          <p>AI-powered early warning system for coaches to identify struggling students.</p>
-        </div>
-
-        <div class="feature-item animate-slide-in" style="animation-delay: 0.3s;">
-          <h4>Smart Mentor Match</h4>
-          <p>Algorithm-driven connections between alumni and current students.</p>
-        </div>
-
-        <div class="feature-item animate-slide-in" style="animation-delay: 0.4s;">
-          <h4>Premium Library</h4>
-          <p>Exclusive access to masterclasses and advanced micro-modules.</p>
-        </div>
-
-        <div class="feature-item animate-slide-in" style="animation-delay: 0.5s;">
-          <h4>Network Directory</h4>
-          <p>Connect with trusted leaders across Africa for partnerships and opportunities.</p>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- CTA Section -->
-  <section class="section cta-section py-12">
-    <div class="container text-center">
-      <h2 class="mb-4">Ready to Transform Your Leadership?</h2>
-      <p class="text-secondary mb-6">Join thousands of leaders who have discovered their potential</p>
-      <a href="auth/login.html" class="btn btn-primary btn-lg">Get Started Today</a>
+    <!-- Main Dashboard -->
+    <div id="dashboard-page" class="page">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="assets/logo.png" alt="Savskill" class="nav-logo">
+                <span class="nav-brand-text">Savskill</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active" data-page="dashboard-home">Dashboard</a></li>
+                <li><a href="#" class="nav-link" data-page="courses">Courses</a></li>
+                <li><a href="#" class="nav-link" data-page="bot">Savskill Bot</a></li>
+                <li><a href="#" class="nav-link" data-page="community">Community</a></li>
+                <li><a href="#" class="nav-link" data-page="challenges">Weekly Challenge</a></li>
+            </ul>
+            <div class="nav-user">
+                <div class="user-avatar" id="user-avatar">U</div>
+                <button id="logout-btn" class="logout-btn">Logout</button>
+            </div>
+        </nav>
+
+        <div class="dashboard-content">
+            <!-- Dashboard Home -->
+            <div id="dashboard-home" class="dashboard-section active">
+                <div class="dashboard-header">
+                    <h1>Welcome back, <span id="dashboard-username">User</span>!</h1>
+                    <p class="subtitle">Your leadership journey continues</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-info">
+                            <h3 id="enrolled-courses">0</h3>
+                            <p>Courses Enrolled</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-info">
+                            <h3 id="completed-modules">0</h3>
+                            <p>Modules Completed</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-info">
+                            <h3 id="current-streak">0</h3>
+                            <p>Day Streak</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-info">
+                            <h3 id="user-tier">Explorer</h3>
+                            <p>Current Tier</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coach-section">
+                    <h2>Your AI Coach</h2>
+                    <div class="coach-card">
+                        <div class="coach-avatar">🎓</div>
+                        <div class="coach-message" id="coach-message">
+                            <p>Great to see you! Based on your progress, I recommend focusing on the Communication module this week. You're making excellent progress!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list" id="activity-list">
+                        <!-- Activity items will be added dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Section -->
+            <div id="courses" class="dashboard-section">
+                <div class="section-header">
+                    <h1>My Courses</h1>
+                    <p>Track your learning journey</p>
+                </div>
+
+                <div class="courses-grid" id="courses-grid">
+                    <!-- Course cards will be dynamically inserted -->
+                </div>
+
+                <!-- Course Detail View -->
+                <div id="course-detail" class="course-detail" style="display: none;">
+                    <button class="back-btn" id="back-to-courses">← Back to Courses</button>
+                    <h2 id="course-title">Course Title</h2>
+                    
+                    <div class="modules-grid" id="modules-grid">
+                        <!-- Module boxes will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Module Content View -->
+                <div id="module-view" class="module-view" style="display: none;">
+                    <button class="back-btn" id="back-to-modules">← Back to Modules</button>
+                    <h2 id="module-title">Module Title</h2>
+
+                    <div class="module-tabs">
+                        <button class="module-tab active" data-tab="content">Content</button>
+                        <button class="module-tab" data-tab="video">Video</button>
+                        <button class="module-tab" data-tab="assessment">Assessment</button>
+                    </div>
+
+                    <div class="module-content-area">
+                        <div id="content-tab" class="module-tab-content active">
+                            <div class="content-text" id="content-text">
+                                <!-- Text content will be loaded here -->
+                            </div>
+                        </div>
+
+                        <div id="video-tab" class="module-tab-content">
+                            <div class="video-player">
+                                <video id="module-video" controls>
+                                    <source src="" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <div id="assessment-tab" class="module-tab-content">
+                            <div class="quiz-container" id="quiz-container">
+                                <!-- Quiz questions will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Savskill Bot Section -->
+            <div id="bot" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Savskill Bot</h1>
+                    <p>Your AI leadership companion</p>
+                </div>
+
+                <div class="bot-container">
+                    <div class="bot-sidebar">
+                        <h3>Features</h3>
+                        <button class="bot-feature-btn active" data-feature="chat">
+                            <span>💬</span> AI Chat
+                        </button>
+                        <button class="bot-feature-btn" data-feature="nudges">
+                            <span>🔔</span> Nudges & Prompts
+                        </button>
+                        <button class="bot-feature-btn" data-feature="feedback">
+                            <span>📝</span> Submit Feedback
+                        </button>
+                    </div>
+
+                    <div class="bot-main">
+                        <!-- AI Chat -->
+                        <div id="bot-chat" class="bot-feature active">
+                            <div class="chat-messages" id="chat-messages">
+                                <div class="bot-message">
+                                    <div class="message-avatar">🤖</div>
+                                    <div class="message-content">
+                                        <p>Hello! I'm your Savskill AI companion. Ask me anything about leadership, your courses, or request guidance on your learning journey.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-input-container">
+                                <input type="text" id="chat-input" placeholder="Ask me about leadership...">
+                                <button id="send-chat" class="cta-button">Send</button>
+                            </div>
+                        </div>
+
+                        <!-- Nudges -->
+                        <div id="bot-nudges" class="bot-feature">
+                            <h2>Your Nudges</h2>
+                            <div class="nudges-list" id="nudges-list">
+                                <!-- Nudges will be added dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Feedback -->
+                        <div id="bot-feedback" class="bot-feature">
+                            <h2>Submit Feedback</h2>
+                            <form id="feedback-form">
+                                <div class="form-group">
+                                    <label>Which module is this feedback for?</label>
+                                    <select id="feedback-module">
+                                        <option value="">Select a module</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Your Feedback</label>
+                                    <textarea id="feedback-text" rows="6" placeholder="Share your thoughts..."></textarea>
+                                </div>
+                                <button type="submit" class="cta-button">Submit Feedback</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community Section -->
+            <div id="community" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Community Tribes</h1>
+                    <p>Connect with fellow leaders</p>
+                </div>
+
+                <!-- Tribe Selection -->
+                <div id="tribe-selection" class="tribe-selection">
+                    <h2>Join Your Tribe</h2>
+                    <p class="tribe-intro">Based on your assessment, we've identified tribes that match your leadership journey. Choose one to join:</p>
+                    
+                    <div class="tribes-grid" id="tribes-grid">
+                        <!-- Tribe cards will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Tribe Chat View -->
+                <div id="tribe-chat" class="tribe-chat" style="display: none;">
+                    <div class="tribe-header">
+                        <button class="back-btn" id="back-to-tribes">← Back to Tribes</button>
+                        <h2 id="current-tribe-name">Tribe Name</h2>
+                        <p id="tribe-member-count">0 members</p>
+                    </div>
+
+                    <div class="tribe-content">
+                        <div class="tribe-chat-area">
+                            <div class="chat-messages" id="tribe-messages">
+                                <!-- Tribe messages will be displayed here -->
+                            </div>
+                            <div class="chat-input-container">
+                                <input type="text" id="tribe-input" placeholder="Message your tribe...">
+                                <button id="send-tribe-message" class="cta-button">Send</button>
+                            </div>
+                        </div>
+
+                        <div class="tribe-sidebar">
+                            <h3>Tribe Resources</h3>
+                            <div class="resources-list" id="tribe-resources">
+                                <!-- Resources will be listed here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weekly Challenge Section -->
+            <div id="challenges" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Weekly Challenge</h1>
+                    <p>Real-world leadership practice</p>
+                </div>
+
+                <div class="current-challenge">
+                    <div class="challenge-header">
+                        <h2>This Week's Challenge</h2>
+                        <span class="challenge-timer" id="challenge-timer">5 days remaining</span>
+                    </div>
+                    
+                    <div class="challenge-card" id="current-challenge-card">
+                        <!-- Current challenge will be displayed here -->
+                    </div>
+                </div>
+
+                <div class="past-challenges">
+                    <h2>Completed Challenges</h2>
+                    <div class="challenges-list" id="past-challenges-list">
+                        <!-- Past challenges will be listed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3 class="footer-logo">SAVSKILLS</h3>
-          <p class="text-muted">Empowering African leaders through transformative education</p>
-        </div>
-
-        <div class="footer-section">
-          <h5 class="footer-title">Platform</h5>
-          <ul class="footer-links">
-            <li><a href="student/dashboard.html">Student Portal</a></li>
-            <li><a href="admin/dashboard.html">Admin Portal</a></li>
-            <li><a href="alumni/dashboard.html">Alumni Portal</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h5 class="footer-title">Resources</h5>
-          <ul class="footer-links">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h5 class="footer-title">Connect</h5>
-          <p class="text-muted">hello@savskills.com</p>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="text-muted">&copy; 2025 SavSkills. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script src="scripts/main.js"></script>
+    <script src="app.js"></script>
 </body>
-
 </html>
